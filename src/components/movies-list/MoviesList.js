@@ -1,24 +1,22 @@
 import React, {useEffect} from "react";
 import { connect } from 'react-redux';
 
-
 import {getMovies} from "../../actions";
-import {moviesListReducer} from "../../reducer/MoviesListReducer";
+
 
 
 
 export function MoviesList (props) {
-    const { moviesList=[], isLoading } = props;
+    const { moviesList=[], isLoading, getMovies } = props;
 debugger
-    useEffect(() => {
-        debugger
-        getMovies();
 
+    useEffect(() => {
+        getMovies();
     }, [])
 
 
-
     console.log(moviesList)
+
     return(
 
     <div>
@@ -31,11 +29,11 @@ debugger
 
 
 const mapStateToProps = (store) => {
-    const { moviesListReducer: {moviesList,isMoviesLoading } } = store;
-    debugger
+    const { moviesListReducer } = store;
+
     return {
-        moviesList: moviesList,
-        isLoading: isMoviesLoading
+        moviesList: moviesListReducer.moviesList,
+        isLoading: moviesListReducer.isMoviesLoading
     };
 };
 

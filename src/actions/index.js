@@ -7,10 +7,9 @@ import {START_MOVIES_LOADING,
 
 
 export const getMovies = () => {
-    debugger
     return (dispatch) => {
         dispatch(startLoadingMovies());
-debugger
+
         fetch( `https://api.themoviedb.org/3/movie/550?api_key=${accessToken}`)
             .then(response => response.json())
             .then((data) => {
