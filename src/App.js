@@ -20,6 +20,7 @@ function App() {
       <Router>
         <Header/>
         <Switch>
+
             <MoviesList/>
         </Switch>
       </Router>
