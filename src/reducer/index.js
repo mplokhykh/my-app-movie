@@ -1,6 +1,7 @@
 import {combineReducers} from "redux";
 
-import { moviesListReducer } from "./MoviesListReducer";
+import { moviesListReducer } from "./moviesListReducer";
+
 
 
 export const createRootReducer = () => {

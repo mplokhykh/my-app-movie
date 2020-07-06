@@ -1,6 +1,6 @@
 import {START_MOVIES_LOADING,
     MOVIES_LOADED,
-    STOP_MOVIES_LOADING} from "../action-types";
+    STOP_MOVIES_LOADING} from "../action-types/moviesListAction-types";
 
 
 const defaultValue = {
@@ -9,6 +9,7 @@ const defaultValue = {
 };
 
 export function moviesListReducer(store = defaultValue, action) {
+
     switch (action.type) {
         case START_MOVIES_LOADING: {
             return {

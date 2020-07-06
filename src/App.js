@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import { store } from "./store";
 
 import { Header } from "./components/header/Header";
-import { MoviesList } from "./components/movies-list/MoviesList";
+import { MoviesPage } from "./components/movies-page/MoviesPage";
 
 
 import './App.css';
@@ -20,8 +20,7 @@ function App() {
       <Router>
         <Header/>
         <Switch>
-
-            <MoviesList/>
+            <MoviesPage/>
         </Switch>
       </Router>
       </Provider>

@@ -1,23 +1,20 @@
-import { accessToken } from "../constans/constans";
+import { api_key } from "../constans/constans";
 
 import {START_MOVIES_LOADING,
         MOVIES_LOADED,
         STOP_MOVIES_LOADING,
-        ERROR_LOADING_MOVIES} from "../action-types";
+        ERROR_LOADING_MOVIES} from "../action-types/moviesListAction-types";
 
 
 export const getMovies = () => {
     return (dispatch) => {
         dispatch(startLoadingMovies());
-
-        fetch( `https://api.themoviedb.org/3/movie/550?api_key=${accessToken}`)
+        return fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}`)
             .then(response => response.json())
             .then((data) => {
-
-                debugger
                 dispatch({
                     type: MOVIES_LOADED,
-                    payload: data.result
+                    payload: data.results
                 });
                 dispatch(stopLoadingMovies());
 
