@@ -10,6 +10,7 @@ import { store } from "./store";
 
 import { Header } from "./components/header/Header";
 import { MoviesPage } from "./components/movies-page/MoviesPage";
+import GenresBadge from "./components/genre-badge/GenresBadge";
 
 
 import './App.css';
@@ -20,7 +21,9 @@ function App() {
       <Router>
         <Header/>
         <Switch>
+
             <MoviesPage/>
+
         </Switch>
       </Router>
       </Provider>
