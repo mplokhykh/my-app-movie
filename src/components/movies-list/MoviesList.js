@@ -21,7 +21,7 @@ export function MoviesList (props) {
 console.log(moviesList)
 
     return(
-    <div className='container'>
+    <div className='Container'>
         {isLoading && <Loading/>}
 
         {!isLoading && moviesList.map(item => {
@@ -31,7 +31,7 @@ console.log(moviesList)
              <div className='ncn'>
                  <GenresBadge genre={item.genre_ids}/>
                  <PosterPreview poster_path={poster_path}/>
-                 <MovieCard key={item.id} movie_title={item.title} release_year={release_year} rating={item.vote_average}/>
+               <MovieCard key={item.id} movie_title={item.title} release_year={release_year} rating={item.vote_average}/>
              </div>
          )
         })}

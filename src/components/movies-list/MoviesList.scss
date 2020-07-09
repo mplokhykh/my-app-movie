@@ -1,9 +1,10 @@
-.container{
+.Container{
   display: flex;
-  flex-direction: row;
+
+  flex-wrap: wrap;
 }
 
 .ncn{
   display: flex;
-  flex-direction: row;
+
 }
