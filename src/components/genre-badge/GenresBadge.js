@@ -1,12 +1,13 @@
 import React, {useEffect} from "react";
 import {connect} from 'react-redux';
-
 import { getGenres } from "../../actions/genreBadgeActions";
-import { MovieCard } from "../movie-card/MovieCard";
+import {Loading} from "../loading/Loading";
+
+
 
 function GenresBadge (props) {
 
- const { genresList, getGenres, genre } = props;
+ const { genresList, getGenres } = props;
 
     useEffect(() => {
         if (!genresList.length) {
@@ -14,19 +15,10 @@ function GenresBadge (props) {
         }
     }, [])
 
-    const ganres_movie = [];
 
-        if(!!genresList && !!genre) {
-            genre.forEach (item => genresList.some( value => {
-                if (item === value.id){
-                    ganres_movie.push(value.name)
-                }
-            }))
-        }
 
-    return <div>
-            {!!ganres_movie && <MovieCard ganres_movie={ganres_movie}/>}
-        </div>
+
+    return null
 }
 
 
@@ -34,7 +26,6 @@ const mapStateToProps = (store) => {
     const { genresBadgeReducer } = store;
     return {
         genresList: genresBadgeReducer.genresBadgeList,
-        isLoading: genresBadgeReducer.isGenresLoading
     };
 };
 const mapDispatchToProps = ({

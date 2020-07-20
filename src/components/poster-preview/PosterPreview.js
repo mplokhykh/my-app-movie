@@ -1,13 +1,11 @@
 import React from "react";
 
-import { MovieCard } from '../movie-card/MovieCard'
-
 
 export function PosterPreview (props) {
 
-    const { poster_path='' } = props;
-    const poster_url = `https://image.tmdb.org/t/p/w200${poster_path}`
+    const { poster_path='', size_poster } = props;
+    const poster_url = `https://image.tmdb.org/t/p/w${size_poster}${poster_path}`
 
-    return <MovieCard poster_url={poster_url}/>
+    return <div> <img src={poster_url} className="container-image"/> </div>
 }
 

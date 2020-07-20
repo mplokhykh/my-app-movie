@@ -1,0 +1,10 @@
+$primary-color: #131722;
+$secondary-color: #7fc4d1;
+
+.dark-theme{
+  background: $primary-color;
+
+  &.bright-theme{
+    background: white;
+  }
+}

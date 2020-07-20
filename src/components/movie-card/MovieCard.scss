@@ -1,14 +1,36 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  background: red;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+$secondary-color: #3eade1d1;
 
-  width: 300px;
-  height: 500px;
-  margin: 10px;
+.link {
+  text-decoration: none;
+}
+.card {
+  width: 200px;
+  height: 400px;
+  margin: 20px;
+  font-family: 'Roboto', sans-serif;
+}
 
-  &-image{
-    width: 200px;
-    height: 300px;
+.text {
+  margin: 5px;
+  white-space: nowrap;
+
+  &-genres {
+    color: $secondary-color;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px 0;
+  }
+
+  &-title {
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px;
+
+    &.bright-theme{
+      color: grey;
+    }
   }
 }

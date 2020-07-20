@@ -9,7 +9,7 @@ import {START_MOVIES_LOADING,
 export const getMovies = () => {
     return (dispatch) => {
         dispatch(startLoadingMovies());
-        return fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}`)
+        return fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&page=1`)
             .then(response => response.json())
             .then((data) => {
                 dispatch({

@@ -1,10 +1,12 @@
 import { api_key } from "../constans/constans";
 
-import {START_GENRES_LOADING, STOP_GENRES_LOADING, GENRES_LOADED, ERROR_LOADING_GENRES} from "../action-types/genresBadgeAction-type";
+import {START_GENRES_LOADING,
+        STOP_GENRES_LOADING,
+        GENRES_LOADED,
+        ERROR_LOADING_GENRES} from "../action-types/genresBadgeAction-type";
 
 export const getGenres = () => {
     return (dispatch) => {
-
         dispatch(startLoadingGenres());
         return fetch( `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`)
             .then(response => response.json())

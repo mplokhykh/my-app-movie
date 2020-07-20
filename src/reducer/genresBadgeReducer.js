@@ -9,7 +9,6 @@ const defaultValue = {
 };
 
 export function genresBadgeReducer(store = defaultValue, action) {
-
     switch (action.type) {
         case START_GENRES_LOADING: {
             return {
