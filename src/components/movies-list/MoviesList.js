@@ -7,13 +7,13 @@ import {MovieCard} from "../movie-card/MovieCard";
 import './MoviesList.scss'
 
 export function MoviesList(props) {
-    const {moviesList, isLoading, getMovies} = props;
+    const {moviesList, isLoading, getMovies, number=2} = props;
 
     useEffect(() => {
         if (!moviesList.length) {
-            getMovies && getMovies();
+            getMovies && getMovies(number);
         }
-    }, [])
+    }, [number])
 
     console.log(moviesList)
 

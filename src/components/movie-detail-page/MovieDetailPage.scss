@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&display=swap');
+
+$primary-color: #131722;
+$secondary-color: #3eade1d1;
+
+.button-back {
+  margin-left: 15px;
+  width: 50px;
+  height: 50px;
+  border: solid 1px white;
+  padding: 10px;
+  border-radius: 50%;
+
+  &.bright-theme{
+    border: solid 1px gray;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+}
+
+.card-movie {
+  background: $primary-color;
+
+  &.bright-theme{
+    background: white;
+  }
+
+  &-detail {
+    display: flex;
+    padding: 40px 40px 40px 40px;
+
+    &-text {
+      flex-direction: column;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      margin-left: 50px;
+      width: 600px;
+
+      &.bright-theme{
+        color:grey;
+      }
+
+      &-title {
+        font-size: 50px;
+        margin-bottom: 3px;
+      }
+
+      &-genres {
+        color: $secondary-color;
+        margin: 0 0 10px 25px;
+      }
+
+      &-overview {
+        font-size: 20px;
+        margin-bottom: 15px;
+        text-align: justify;
+      }
+
+      &-extra {
+        font-size: 15px;
+        color: lightgray;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.rating {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  font-family: 'Baloo Da 2', cursive;
+  height: 40px;
+
+
+  &-star {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  &-vote {
+    display: flex;
+    flex-direction: column;
+
+    &-average {
+      font-weight: bold;
+      font-size: 25px;
+      color: $secondary-color;
+      height: 20px;
+      margin-bottom: 15px;
+    }
+
+    &-count {
+      color: gray;
+      font-size: 11px;
+
+    }
+  }
+}
+

@@ -6,10 +6,11 @@ import {START_MOVIES_LOADING,
         ERROR_LOADING_MOVIES} from "../action-types/moviesListAction-types";
 
 
-export const getMovies = () => {
+export const getMovies = (number) => {
     return (dispatch) => {
+        debugger
         dispatch(startLoadingMovies());
-        return fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&page=1`)
+        return fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&page=${number}`)
             .then(response => response.json())
             .then((data) => {
                 dispatch({
