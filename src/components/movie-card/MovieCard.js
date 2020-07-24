@@ -12,7 +12,7 @@ function MovieCardComponent (props) {
 
 const { info_movie, match: {url} } = props;
 const { poster_path, release_date, genre_ids, title, id } = info_movie
-
+debugger
     const release_year = release_date.substring(0,4)
     const size_poster = 200;
 

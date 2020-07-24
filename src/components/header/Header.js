@@ -6,11 +6,14 @@ import Moon from '../../image/Moon/Moon.png'
 import {BrightThemeContext} from "../../context/BrightTheme";
 
 import {user} from '../../constans/constans'
+import {Search} from "../search/Search";
 import {UserInfo} from "../user-info/UserInfo";
 
 import './Header.scss'
 
-export function Header(props) {
+
+export function Header() {
+
 
     return (
         <BrightThemeContext.Consumer>
@@ -21,14 +24,12 @@ export function Header(props) {
                         <div className={`may-header ${isBrightTheme && 'bright'}`}>
                             <img src={Logo} className="may-header-logo"/>
 
-                            <form action="" method="post" className="search">
-                                <input type="search" name="" placeholder="Search" className="input"/>
-                                <input type="submit" name="" value="" className="submit"/>
-                            </form>
+                            <Search/>
 
                             <div className='choose-theme'>
                             <img src={Moon} className='choose-theme-img-moon'/>
                             <label className="switch">
+
                                 <input type="checkbox" onClick={toggleTheme}/>
                                 <span className="slider round"></span>
                             </label>
@@ -44,3 +45,4 @@ export function Header(props) {
         </BrightThemeContext.Consumer>
     )
 }
+

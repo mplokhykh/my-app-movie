@@ -1,15 +1,18 @@
 import {START_MOVIES_LOADING,
     MOVIES_LOADED,
-    STOP_MOVIES_LOADING} from "../action-types/moviesListAction-types";
+    STOP_MOVIES_LOADING,
+    CURRENT_PAGE} from "../action-types/moviesListAction-types";
 
 
 const defaultValue = {
     moviesList: [],
-    isMoviesLoading: false
+    isMoviesLoading: false,
+    totalMoviesPage: 0,
+    currentPage: 1
 };
 
 export function moviesListReducer(store = defaultValue, action) {
-
+debugger
     switch (action.type) {
         case START_MOVIES_LOADING: {
             return {
@@ -27,6 +30,13 @@ export function moviesListReducer(store = defaultValue, action) {
             return {
                 ...store,
                 moviesList: action.payload,
+                totalMoviesPage: action.total_page
+            }
+        }
+        case CURRENT_PAGE: {
+            return {
+                ...store,
+                currentPage: action.payload
             }
         }
 

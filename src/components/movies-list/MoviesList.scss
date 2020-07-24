@@ -1,7 +1,59 @@
-.container{
+$secondary-color: #3eade1d1;
+
+
+.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.pagination {
+  display: flex;
+  margin: 30px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $secondary-color;
+    height: 30px;
+    width: 150px;
+    margin: 5px;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 50px;
+    background: $secondary-color;
+    margin: 5px;
+    border-radius: 5px;
+
+    &.activePage{
+      background: darkslateblue;
+    }
+
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      background: #1f4f58;
+    }
+  }
+}
+
+
 
 
