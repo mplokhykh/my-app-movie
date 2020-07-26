@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import ReactDOM from 'react-dom';
 import {BrightThemeContext} from "../../context/BrightTheme";
 import {SearchResultsContext} from "../../context/SearchResultsContext";
 import MoviesList from "../movies-list/MoviesList";
@@ -11,16 +10,12 @@ import {MovieCard} from "../movie-card/MovieCard";
 export function MoviesPage(props) {
     const [state, setState] = useState(false)
 
-debugger
-
-
-
     return (
         <SearchResultsContext.Consumer>
             {
                 (value) => {
-                    const {isLoading, searchResults, error} = value;
-                    if(!!searchResults){
+                    const {isLoading, searchResults, error, onRemoveResults} = value;
+                    if (!!searchResults) {
                         setState(true)
                     }
 
@@ -31,20 +26,22 @@ debugger
                                     const {isBrightTheme} = value;
                                     return (
                                         <div className={`dark-theme ${isBrightTheme && 'bright-theme'}`}>
-                                            <MoviesList />
-                                         <GenresBadge/>
-
-
-                                            {
-                                                !!state
-                                                && !isLoading
-                                                && !error
-                                                && !!searchResults
-                                                && searchResults.map(item => <MovieCard info_movie={item}/>)
-                                            }
+                                            <div className='search-results'>
+                                                  && <div className='not-found'>NOT FOUND</div>
+                                                {
+                                                    !!state
+                                                    && !isLoading
+                                                    && !error
+                                                    && !!searchResults
+                                                    && !!searchResults.length
+                                                    && searchResults.map(item => <MovieCard info_movie={item}/>)
+                                                }
+                                            </div>
+                                            <span onClick={onRemoveResults}><MoviesList/></span>
+                                            <GenresBadge/>
                                         </div>
 
-                                )
+                                    )
                                 }
                             }
                         </BrightThemeContext.Consumer>

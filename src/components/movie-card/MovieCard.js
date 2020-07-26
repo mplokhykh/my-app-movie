@@ -9,10 +9,9 @@ import './MovieCard.scss'
 
 
 function MovieCardComponent (props) {
-debugger
 const { info_movie, match: {url} } = props;
 const { poster_path, release_date, genre_ids, title, id } = info_movie
-debugger
+
     let release_year = '';
 
     if (!!release_date){

@@ -8,3 +8,11 @@ $secondary-color: #7fc4d1;
     background: white;
   }
 }
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid grey;
+}
