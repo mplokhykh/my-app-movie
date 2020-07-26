@@ -12,17 +12,22 @@ import {Header} from "./components/header/Header";
 import {MoviesPage} from "./components/movies-page/MoviesPage";
 import MovieDetailPage from "./components/movie-detail-page/MovieDetailPage";
 import {BrightThemeWrapper} from "./components/bright-theme-wrapers/BrightThemeWrapper";
+import {SearchResultsContextWrapper} from "./components/bright-theme-wrapers/SearchResultsContextWrapper";
+import {SearchResults} from "./components/search/SearchResults";
 
 import './App.css';
 
 
+
 function App() {
     return (
+        <SearchResultsContextWrapper>
         <BrightThemeWrapper>
             <Provider store={store}>
                 <Router>
                     <Header/>
                     <Switch>
+                        <Route path="/movies/search" component={SearchResults} exact/>
 
                         <Route path="/movies" component={MoviesPage} exact/>
                         <Route path="/movies/:id"
@@ -31,11 +36,14 @@ function App() {
                                }}
                         />
 
+
+
                         <Redirect from="/" to="/movies" exact/>
                     </Switch>
                 </Router>
             </Provider>
         </BrightThemeWrapper>
+        </SearchResultsContextWrapper>
     );
 
 }

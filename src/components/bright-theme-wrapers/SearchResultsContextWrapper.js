@@ -1,12 +1,11 @@
-import React, {useState} from "react";
+import React,  {useState} from 'react';
+import {SearchResultsContext} from "../../context/SearchResultsContext";
 import {api_key} from "../../constans/constans";
-import {MoviesPage} from "../movies-page/MoviesPage";
+import {Link} from "react-router-dom";
 
-import './Search.css'
 
-export function Search(props) {
-
-    debugger
+export function SearchResultsContextWrapper (props) {
+    const {children} = props;
     const [searchInfo, setSearchInfo] = useState('');
     const [isLoading, setLoading] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
@@ -29,33 +28,28 @@ export function Search(props) {
     };
 
     const onSearchInfo = (event) => {
-        debugger
         const request_array = event.target.value.split(',')
         setSearchInfo(request_array);
+
     };
-    debugger
+
     const onSubmit = (e) => {
         e.preventDefault();
-        loadSearch(searchInfo);
+        loadSearch(searchInfo)
     };
 
-    console.log(searchResults);
 
     return (
-        <div>
-            <form action="" method="post" className="search" onSubmit={onSubmit}>
-                <input type="search" name="" placeholder="Search" className="input" onChange={onSearchInfo}/>
-                <input type="submit" name="" value="" className="submit"/>
-            </form>
+        <SearchResultsContext.Provider value={{
+            onSubmit,
+            onSearchInfo,
+            isLoading,
+            searchResults,
+            error
+        }}>
 
-            {
-                !isLoading
-                && !!searchResults
-                && !error
-                && searchResults
-                && <MoviesPage result_search_movie={searchResults}/>
-            }
-        </div>
-    )
+            {children}
+        </SearchResultsContext.Provider>
+    );
 
 }

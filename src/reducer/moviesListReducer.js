@@ -12,7 +12,7 @@ const defaultValue = {
 };
 
 export function moviesListReducer(store = defaultValue, action) {
-debugger
+
     switch (action.type) {
         case START_MOVIES_LOADING: {
             return {

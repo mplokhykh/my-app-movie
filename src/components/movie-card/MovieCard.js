@@ -9,11 +9,18 @@ import './MovieCard.scss'
 
 
 function MovieCardComponent (props) {
-
+debugger
 const { info_movie, match: {url} } = props;
 const { poster_path, release_date, genre_ids, title, id } = info_movie
 debugger
-    const release_year = release_date.substring(0,4)
+    let release_year = '';
+
+    if (!!release_date){
+        release_year = release_date.substring(0,4)
+    } else {
+        release_year = '';
+    }
+
     const size_poster = 200;
 
 

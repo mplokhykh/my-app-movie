@@ -45,7 +45,7 @@ export const stopLoadingMovies = () => {
 
 
 export const setCurrentPage = (page) => {
-    debugger
+
     return {
         type: CURRENT_PAGE,
         payload: page

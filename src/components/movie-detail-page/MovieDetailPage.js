@@ -12,7 +12,7 @@ import './MovieDetailPage.scss'
 
 
 function MovieDetailPage(props) {
-    debugger
+
     const {match: {params: {id}}, moviesList} = props;
 
     const detail_info = moviesList.filter(item => item.id === +id);

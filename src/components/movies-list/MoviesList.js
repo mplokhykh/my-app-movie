@@ -8,7 +8,7 @@ import './MoviesList.scss'
 
 export function MoviesList(props) {
     const {moviesList, isLoading, getMovies, totalMoviesPage, currentPage} = props;
-
+debugger
     const [startPage, setStartPage] = useState(1);
     const [endPage, setEndPage] = useState(10);
 
@@ -39,7 +39,7 @@ export function MoviesList(props) {
     }
 
     const onPageChanged = (page) => {
-        debugger
+
         getMovies(page)
     }
 
